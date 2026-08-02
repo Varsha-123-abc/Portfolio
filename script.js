@@ -52,3 +52,14 @@ setTimeout(type, deleting ? 60 : 120);
 }
 
 type();
+const sections = document.querySelectorAll(".hidden-section");
+
+window.addEventListener("scroll", () => {
+    sections.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+
+        if (top < window.innerHeight - 100) {
+            section.classList.add("show");
+        }
+    });
+});
