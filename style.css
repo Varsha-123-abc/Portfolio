@@ -1,0 +1,34 @@
+/* Fade Animation */
+.hidden-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+body{
+    background:#050816;
+    color:white;
+}
+
+section{
+    position:relative;
+}
+
+.glow{
+    box-shadow:0 0 20px cyan;
+}
+
+.card{
+    background:#111827;
+    border:1px solid #06b6d4;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px cyan;
+}
