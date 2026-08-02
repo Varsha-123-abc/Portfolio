@@ -1,34 +1,49 @@
 /* Fade Animation */
 .hidden-section {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    display: block !important;
 }
 
 .show {
     opacity: 1;
     transform: translateY(0);
 }
-body{
-    background:#050816;
-    color:white;
+
+
+/* Fix sections visibility */
+#skills,
+#projects,
+#certifications {
+    display: block;
+    visibility: visible;
+    color: white;
 }
 
-section{
-    position:relative;
+#skills h2,
+#projects h2,
+#certifications h2 {
+    color: #00ffff;
 }
 
-.glow{
-    box-shadow:0 0 20px cyan;
+#skills p,
+#projects p,
+#certifications p,
+#skills h3,
+#projects h3,
+#certifications h3 {
+    color: white;
 }
 
-.card{
-    background:#111827;
-    border:1px solid #06b6d4;
-    transition:.4s;
+.card {
+    background: rgba(0, 255, 255, 0.08);
+    color: white;
+    border: 1px solid cyan;
 }
-
-.card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 0 25px cyan;
+#skills,
+#projects,
+#certifications {
+    background: #111;
+    min-height: 300px;
+    padding: 50px;
 }
