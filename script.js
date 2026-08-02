@@ -1,22 +1,54 @@
-// Smooth fade-in animation
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
-});
+const words = [
+"Penetration Tester",
+"Ethical Hacker",
+"Bug Bounty Learner",
+"Cybersecurity Enthusiast"
+];
 
-document.querySelectorAll(".hidden-section").forEach((el) => {
-  observer.observe(el);
-});
+let i = 0;
+let j = 0;
+let current = "";
+let deleting = false;
 
-// Navbar shadow on scroll
-window.addEventListener("scroll", () => {
-  const nav = document.querySelector("nav");
-  if (window.scrollY > 50) {
-    nav.classList.add("shadow-lg");
-  } else {
-    nav.classList.remove("shadow-lg");
-  }
-});
+function type() {
+
+const typing = document.getElementById("typing");
+
+if (!typing) return;
+
+if (!deleting) {
+
+current = words[i].substring(0, j++);
+typing.textContent = current;
+
+if (j > words[i].length) {
+
+deleting = true;
+
+setTimeout(type, 1500);
+
+return;
+
+}
+
+} else {
+
+current = words[i].substring(0, j--);
+
+typing.textContent = current;
+
+if (j === 0) {
+
+deleting = false;
+
+i = (i + 1) % words.length;
+
+}
+
+}
+
+setTimeout(type, deleting ? 60 : 120);
+
+}
+
+type();
